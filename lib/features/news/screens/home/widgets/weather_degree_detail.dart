@@ -24,38 +24,34 @@ class WeatherDegreeDetails extends StatelessWidget {
       child: AnimatedBuilder(
         animation: _slideAnimation,
         builder: (context, child) {
-          return Transform.translate(
-            offset: Offset(0, _slideAnimation.value),
-            child: child,
-          );
+          return Transform.translate(offset: Offset(0, _slideAnimation.value), child: child);
         },
         child: Center(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Image.asset(
-                AppImages.rainyIcon,
-                height: context.screenHeight * 0.15,
-              ),
+              Image.asset(AppImages.rainyIcon, height: context.screenHeight * 0.15),
               Column(
                 children: [
+                  //-- des
                   Text(
-                    currentWeatherData.current.weather!.first.description
-                        .toString(),
+                    currentWeatherData.current.weather!.first.description.toString(),
                     style: GoogleFonts.poppins(
                       color: AppColors.whiteText,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
+
+                  //-- current weather temp
                   Text(
-                    '${currentWeatherData.current.temp!.toInt().toString()}°' ??
-                        "",
+                    '${currentWeatherData.current.temp!.toInt().toString()}°' ?? "",
                     style: GoogleFonts.poppins(
                       color: AppColors.whiteText,
                       fontWeight: FontWeight.w700,
                       fontSize: context.screenHeight * 0.06,
                     ),
                   ),
+                  //-- date format
                   Text(
                     DateFormat.yMMMMd().format(HomeController.instance.now),
                     style: GoogleFonts.poppins(

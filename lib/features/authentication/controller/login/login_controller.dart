@@ -20,14 +20,6 @@ class LoginController extends GetxController {
   final RxBool isLoading = false.obs;
 
   @override
-  void onReady() {
-    // TODO: implement onReady
-    super.onReady();
-    emailController.text = localStorage.read('REMEMBER_ME_EMAIL') ?? '';
-    passwordController.text = localStorage.read('REMEMBER_ME_PASSWORD') ?? '';
-  }
-
-  @override
   void dispose() {
     //-- disposing the controllers
     // TODO: implement dispose
@@ -39,12 +31,10 @@ class LoginController extends GetxController {
   //-- email and password sign in
   Future<void> emailAndPasswordSignIn() async {
     try {
+      //-- make the loading value true
       isLoading.value = true;
 
-      AppFullScreenLoader.openLoadingDialog(
-        'Logging you in....',
-        AppImages.loaderAnimation,
-      );
+      AppFullScreenLoader.openLoadingDialog('Logging you in....', AppImages.loaderAnimation);
 
       //-- check the internet connectivity
       final isConnected = await NetworkManager.instance.isConnected();
@@ -63,10 +53,7 @@ class LoginController extends GetxController {
       //-- save the data if the remember me is selected
       if (rememberMe.value) {
         localStorage.write('REMEMBER_ME_EMAIL', emailController.text.trim());
-        localStorage.write(
-          'REMEMBER_ME_PASSWORD',
-          passwordController.text.trim(),
-        );
+        localStorage.write('REMEMBER_ME_PASSWORD', passwordController.text.trim());
       }
 
       //-- log in user using email and password authentication

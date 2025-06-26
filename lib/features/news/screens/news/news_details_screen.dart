@@ -39,15 +39,16 @@ class NewsDetailsScreen extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               children: [
+                //-- showing news image
                 Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(30),
-                  ),
+                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(30)),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(30),
                     child: Image.network(imageUrl),
                   ),
                 ),
+
+                //-- news title
                 Padding(
                   padding: EdgeInsets.only(top: context.screenHeight * 0.02),
                   child: Text(
@@ -59,12 +60,12 @@ class NewsDetailsScreen extends StatelessWidget {
                     ),
                   ),
                 ),
+
+                //-- news uploaded time
                 Row(
                   children: [
                     Padding(
-                      padding: EdgeInsets.only(
-                        top: context.screenHeight * 0.01,
-                      ),
+                      padding: EdgeInsets.only(top: context.screenHeight * 0.01),
                       child: Text(
                         DateFormat.yMMMd().format(time),
                         style: GoogleFonts.poppins(
@@ -75,15 +76,16 @@ class NewsDetailsScreen extends StatelessWidget {
                     ),
                   ],
                 ),
+
+                //-- news autor and his name
                 Padding(
                   padding: EdgeInsets.only(top: context.screenHeight * 0.01),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      //-- symbol of the author
                       Container(
-                        margin: EdgeInsets.only(
-                          right: context.screenWidth * 0.03,
-                        ),
+                        margin: EdgeInsets.only(right: context.screenWidth * 0.03),
                         height: context.screenHeight * 0.03,
                         width: context.screenWidth * 0.065,
                         decoration: BoxDecoration(
@@ -93,16 +95,14 @@ class NewsDetailsScreen extends StatelessWidget {
                         child: Center(
                           child: Text(
                             author[0],
-                            style: GoogleFonts.poppins(
-                              color: AppColors.whiteText,
-                            ),
+                            style: GoogleFonts.poppins(color: AppColors.whiteText),
                           ),
                         ),
                       ),
+
+                      //-- author name
                       Padding(
-                        padding: EdgeInsets.only(
-                          top: context.screenHeight * 0.005,
-                        ),
+                        padding: EdgeInsets.only(top: context.screenHeight * 0.005),
                         child: Text(
                           author,
                           style: GoogleFonts.poppins(

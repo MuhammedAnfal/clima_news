@@ -25,20 +25,22 @@ class AppAnimationLoaderWidget extends StatelessWidget {
     return Center(
       child: Column(
         children: [
+          //-- animaation asset
           Lottie.asset(animation, width: context.screenWidth * 0.35),
+
+          //-- texts
           Text(
             text,
             style: Theme.of(context).textTheme.headlineMedium,
             textAlign: TextAlign.center,
           ),
           SizedBox(height: context.screenHeight * 0.06),
+          //-- show action button
           showAction
               ? SizedBox(
                 width: context.screenWidth,
                 child: OutlinedButton(
-                  style: OutlinedButton.styleFrom(
-                    backgroundColor: AppColors.dark,
-                  ),
+                  style: OutlinedButton.styleFrom(backgroundColor: AppColors.dark),
                   onPressed: onActionPressed,
                   child: Text(actionText!),
                 ),

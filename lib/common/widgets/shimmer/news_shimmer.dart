@@ -14,7 +14,7 @@ class NewsShimmer extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                //-- heading shimmer
+                //--  heading shimmer
                 Center(
                   child: ShimmerEffect(
                     width: context.screenWidth * 0.55,
@@ -23,7 +23,7 @@ class NewsShimmer extends StatelessWidget {
                   ),
                 ),
 
-                //-- see all and hottest news shimmer
+                //--  see all and hottest news shimmer
                 Padding(
                   padding: EdgeInsets.only(top: context.screenHeight * 0.01),
                   child: Row(
@@ -34,16 +34,20 @@ class NewsShimmer extends StatelessWidget {
                         height: context.screenHeight * 0.03,
                         radius: 10,
                       ),
-                      ShimmerEffect(
-                        width: context.screenWidth * 0.2,
-                        height: context.screenHeight * 0.03,
-                        radius: 10,
-                      ),
                     ],
                   ),
                 ),
+                //-- textformfiled shimmer
+                Padding(
+                  padding: EdgeInsets.only(top: context.screenHeight * 0.035),
+                  child: ShimmerEffect(
+                    width: context.screenWidth,
+                    height: context.screenHeight * 0.07,
+                    radius: 40,
+                  ),
+                ),
 
-                //-- hottes listview shimmer
+                //--  hottes listview shimmer
                 SizedBox(
                   height: context.screenHeight * 0.35,
                   child: ListView.builder(
@@ -61,7 +65,7 @@ class NewsShimmer extends StatelessWidget {
                     },
                   ),
                 ),
-                //-- news for you and hottest news shimmer
+                //--  news for you and hottest news shimmer
                 Padding(
                   padding: EdgeInsets.only(top: context.screenHeight * 0.03),
                   child: Row(
@@ -72,16 +76,11 @@ class NewsShimmer extends StatelessWidget {
                         height: context.screenHeight * 0.03,
                         radius: 10,
                       ),
-                      ShimmerEffect(
-                        width: context.screenWidth * 0.2,
-                        height: context.screenHeight * 0.03,
-                        radius: 10,
-                      ),
                     ],
                   ),
                 ),
 
-                //-- news for you listview shimmer
+                //--  news for you listview shimmer
                 Padding(
                   padding: EdgeInsets.only(top: context.screenHeight * 0.02),
                   child: SizedBox(
@@ -90,9 +89,7 @@ class NewsShimmer extends StatelessWidget {
                       itemCount: 4,
                       itemBuilder: (context, index) {
                         return Padding(
-                          padding: EdgeInsets.only(
-                            bottom: context.screenHeight * 0.025,
-                          ),
+                          padding: EdgeInsets.only(bottom: context.screenHeight * 0.025),
                           child: ShimmerEffect(
                             width: context.screenWidth * 0.6,
                             height: context.screenHeight * 0.2,

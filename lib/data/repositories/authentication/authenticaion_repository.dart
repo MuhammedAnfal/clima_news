@@ -35,9 +35,7 @@ class AuthenticationRepository extends GetxController {
       if (user.emailVerified) {
         return Get.offAll(() => const NavigationMenu());
       } else {
-        return Get.offAll(
-          () => VerifyEmailScreen(email: _auth.currentUser?.email),
-        );
+        return Get.offAll(() => VerifyEmailScreen(email: _auth.currentUser?.email));
       }
     } else {
       //-- local Storage
@@ -51,15 +49,9 @@ class AuthenticationRepository extends GetxController {
   /*----------------------email and password sign in-----------------*/
   //-- email authentication (sign in)
 
-  Future<UserCredential> loginWithEmailAndPassword(
-    String email,
-    String password,
-  ) async {
+  Future<UserCredential> loginWithEmailAndPassword(String email, String password) async {
     try {
-      return await _auth.signInWithEmailAndPassword(
-        email: email,
-        password: password,
-      );
+      return await _auth.signInWithEmailAndPassword(email: email, password: password);
     } on FirebaseAuthException catch (e) {
       throw AppFirebaseAuthExceptions(e.code).message;
     } on FirebaseException catch (e) {
@@ -74,15 +66,9 @@ class AuthenticationRepository extends GetxController {
   }
 
   //-- eamil auhtentication (register)
-  Future<UserCredential> registerWithEmailAndPassword(
-    String email,
-    String password,
-  ) async {
+  Future<UserCredential> registerWithEmailAndPassword(String email, String password) async {
     try {
-      return await _auth.createUserWithEmailAndPassword(
-        email: email,
-        password: password,
-      );
+      return await _auth.createUserWithEmailAndPassword(email: email, password: password);
     } on FirebaseAuthException catch (e) {
       throw AppFirebaseAuthExceptions(e.code).message;
     } on FirebaseException catch (e) {
@@ -100,33 +86,6 @@ class AuthenticationRepository extends GetxController {
   Future<void> sendEmailVerification() async {
     try {
       return _auth.currentUser?.sendEmailVerification();
-    } on FirebaseAuthException catch (e) {
-      throw AppFirebaseAuthExceptions(e.code).message;
-    } on FirebaseException catch (e) {
-      throw AppFirebaseException(e.toString()).message.toString();
-    } on PlatformException catch (e) {
-      throw AppPlatformException(e.code).message;
-    } on FormatException {
-      throw const AppFormatException();
-    } catch (e) {
-      throw 'Something went wrong, Please try againg';
-    }
-  }
-
-  //-- reauthenticate user [reauthentication]
-  Future<void> reAthenticateWithEmailAndPassword(
-    String email,
-    String password,
-  ) async {
-    try {
-      //-- create credential
-      AuthCredential credential = EmailAuthProvider.credential(
-        email: email,
-        password: password,
-      );
-
-      //-- reAutheticate
-      await _auth.currentUser!.reauthenticateWithCredential(credential);
     } on FirebaseAuthException catch (e) {
       throw AppFirebaseAuthExceptions(e.code).message;
     } on FirebaseException catch (e) {

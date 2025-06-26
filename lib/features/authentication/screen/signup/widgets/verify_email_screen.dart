@@ -111,6 +111,8 @@ class VerifyEmailScreen extends StatelessWidget {
                 ),
 
                 const SizedBox(height: AppSizes.spaceBtwItems),
+
+                //-- resent emailbutton
                 SizedBox(
                   width: double.infinity,
                   child: TextButton(

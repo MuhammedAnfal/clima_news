@@ -15,14 +15,18 @@ class WeatherShimmerEffect extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              //-- user Icon and place text shimmers
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
+                  //-- place shimmer
                   ShimmerEffect(
                     width: context.screenWidth * 0.4,
                     height: context.screenHeight * 0.045,
                     radius: 40,
                   ),
+
+                  //-- profile icon shimmer
                   ShimmerEffect(
                     width: context.screenWidth * 0.15,
                     height: context.screenHeight * 0.07,
@@ -30,6 +34,8 @@ class WeatherShimmerEffect extends StatelessWidget {
                   ),
                 ],
               ),
+
+              //-- textformfiled shimmer
               Padding(
                 padding: EdgeInsets.only(top: context.screenHeight * 0.035),
                 child: ShimmerEffect(
@@ -38,6 +44,8 @@ class WeatherShimmerEffect extends StatelessWidget {
                   radius: 40,
                 ),
               ),
+
+              //-- temp weather and weather des shimmer
               Padding(
                 padding: EdgeInsets.only(top: context.screenHeight * 0.02),
                 child: ShimmerEffect(
@@ -46,6 +54,8 @@ class WeatherShimmerEffect extends StatelessWidget {
                   radius: 40,
                 ),
               ),
+
+              //-- weather datas shimmer  such as humidity,uv......
               Padding(
                 padding: EdgeInsets.only(top: context.screenHeight * 0.02),
                 child: ShimmerEffect(
@@ -54,6 +64,8 @@ class WeatherShimmerEffect extends StatelessWidget {
                   radius: 40,
                 ),
               ),
+
+              //-- hourly forecast simmer
               Padding(
                 padding: EdgeInsets.only(top: context.screenHeight * 0.02),
                 child: SizedBox(
@@ -64,9 +76,7 @@ class WeatherShimmerEffect extends StatelessWidget {
                     itemCount: 4,
                     itemBuilder: (context, index) {
                       return Padding(
-                        padding: EdgeInsets.only(
-                          right: context.screenWidth * 0.025,
-                        ),
+                        padding: EdgeInsets.only(right: context.screenWidth * 0.025),
                         child: Row(
                           children: [
                             ShimmerEffect(

@@ -17,8 +17,7 @@ class SignupPage extends StatefulWidget {
   _SignupPageState createState() => _SignupPageState();
 }
 
-class _SignupPageState extends State<SignupPage>
-    with SingleTickerProviderStateMixin {
+class _SignupPageState extends State<SignupPage> with SingleTickerProviderStateMixin {
   //--varailbes
   final signupController = Get.put(SignupController());
 
@@ -31,28 +30,21 @@ class _SignupPageState extends State<SignupPage>
   void initState() {
     super.initState();
 
-    _controller = AnimationController(
-      vsync: this,
-      duration: Duration(seconds: 2),
-    );
+    _controller = AnimationController(vsync: this, duration: Duration(seconds: 2));
 
-    _animation = Tween<double>(begin: 0, end: 1).animate(
-      CurvedAnimation(parent: _controller, curve: Curves.fastOutSlowIn),
-    );
+    _animation = Tween<double>(
+      begin: 0,
+      end: 1,
+    ).animate(CurvedAnimation(parent: _controller, curve: Curves.fastOutSlowIn));
 
     _opacityAnimation = Tween<double>(begin: 0, end: 1).animate(
-      CurvedAnimation(
-        parent: _controller,
-        curve: Interval(0.3, 1, curve: Curves.easeIn),
-      ),
+      CurvedAnimation(parent: _controller, curve: Interval(0.3, 1, curve: Curves.easeIn)),
     );
 
     _slideAnimation = Tween<Offset>(
       begin: Offset(0, 0.5),
       end: Offset.zero,
-    ).animate(
-      CurvedAnimation(parent: _controller, curve: Curves.fastOutSlowIn),
-    );
+    ).animate(CurvedAnimation(parent: _controller, curve: Curves.fastOutSlowIn));
 
     _controller.forward();
   }
@@ -109,23 +101,18 @@ class _SignupPageState extends State<SignupPage>
                                     ),
                                   ),
 
-                                  // Name Field
+                                  //-- Name Field
                                   Padding(
-                                    padding: EdgeInsets.only(
-                                      top: context.screenHeight * 0.03,
-                                    ),
+                                    padding: EdgeInsets.only(top: context.screenHeight * 0.03),
                                     child: FadeTransition(
                                       opacity: _opacityAnimation,
                                       child: TextFormField(
-                                        controller:
-                                            signupController.nameController,
+                                        controller: signupController.nameController,
                                         decoration: InputDecoration(
                                           labelText: 'Full Name',
                                           prefixIcon: Icon(Icons.person),
                                           border: OutlineInputBorder(
-                                            borderRadius: BorderRadius.circular(
-                                              10,
-                                            ),
+                                            borderRadius: BorderRadius.circular(10),
                                           ),
                                         ),
                                         validator: (value) {
@@ -138,146 +125,107 @@ class _SignupPageState extends State<SignupPage>
                                     ),
                                   ),
 
-                                  // Email Field
+                                  //-- Email Field
                                   Padding(
-                                    padding: EdgeInsets.only(
-                                      top: context.screenHeight * 0.02,
-                                    ),
+                                    padding: EdgeInsets.only(top: context.screenHeight * 0.02),
                                     child: FadeTransition(
                                       opacity: _opacityAnimation,
                                       child: TextFormField(
-                                        controller:
-                                            signupController.emailController,
+                                        controller: signupController.emailController,
                                         decoration: InputDecoration(
                                           labelText: 'Email',
                                           prefixIcon: Icon(Icons.email),
                                           border: OutlineInputBorder(
-                                            borderRadius: BorderRadius.circular(
-                                              10,
-                                            ),
+                                            borderRadius: BorderRadius.circular(10),
                                           ),
                                         ),
-                                        keyboardType:
-                                            TextInputType.emailAddress,
+                                        keyboardType: TextInputType.emailAddress,
                                         validator:
-                                            (value) =>
-                                                AppValidator.validateEmail(
-                                                  value,
-                                                ),
+                                            (value) => AppValidator.validateEmail(value),
                                       ),
                                     ),
                                   ),
 
-                                  // Password Field
+                                  //-- Password Field
                                   Padding(
-                                    padding: EdgeInsets.only(
-                                      top: context.screenHeight * 0.02,
-                                    ),
+                                    padding: EdgeInsets.only(top: context.screenHeight * 0.02),
                                     child: FadeTransition(
                                       opacity: _opacityAnimation,
                                       child: TextFormField(
-                                        controller:
-                                            signupController.passwordController,
+                                        controller: signupController.passwordController,
                                         decoration: InputDecoration(
                                           labelText: 'Password',
                                           prefixIcon: Icon(Icons.lock),
                                           suffixIcon: IconButton(
                                             icon: Icon(
-                                              signupController
-                                                      .obscurePassword
-                                                      .value
+                                              signupController.obscurePassword.value
                                                   ? Icons.visibility_off
                                                   : Icons.visibility,
                                             ),
                                             onPressed: () {
                                               setState(() {
-                                                signupController
-                                                    .obscurePassword
-                                                    .value = !signupController
-                                                        .obscurePassword
-                                                        .value;
+                                                signupController.obscurePassword.value =
+                                                    !signupController.obscurePassword.value;
                                               });
                                             },
                                           ),
                                           border: OutlineInputBorder(
-                                            borderRadius: BorderRadius.circular(
-                                              10,
-                                            ),
+                                            borderRadius: BorderRadius.circular(10),
                                           ),
                                         ),
-                                        obscureText:
-                                            signupController
-                                                .obscurePassword
-                                                .value,
+                                        obscureText: signupController.obscurePassword.value,
                                         validator:
-                                            (value) =>
-                                                AppValidator.validatePassword(
-                                                  value,
-                                                ),
+                                            (value) => AppValidator.validatePassword(value),
                                       ),
                                     ),
                                   ),
 
-                                  // Confirm Password Field
+                                  //-- Confirm Password Field
                                   Padding(
-                                    padding: EdgeInsets.only(
-                                      top: context.screenHeight * 0.02,
-                                    ),
+                                    padding: EdgeInsets.only(top: context.screenHeight * 0.02),
                                     child: FadeTransition(
                                       opacity: _opacityAnimation,
                                       child: TextFormField(
-                                        controller:
-                                            signupController
-                                                .confirmPasswordController,
+                                        controller: signupController.confirmPasswordController,
                                         decoration: InputDecoration(
                                           labelText: 'Confirm Password',
                                           prefixIcon: Icon(Icons.lock_outline),
                                           suffixIcon: IconButton(
                                             icon: Icon(
-                                              signupController
-                                                      .obscureConfirmPassword
-                                                      .value
+                                              signupController.obscureConfirmPassword.value
                                                   ? Icons.visibility_off
                                                   : Icons.visibility,
                                             ),
                                             onPressed: () {
                                               setState(() {
-                                                signupController
-                                                    .obscureConfirmPassword
-                                                    .value = !signupController
+                                                signupController.obscureConfirmPassword.value =
+                                                    !signupController
                                                         .obscureConfirmPassword
                                                         .value;
                                               });
                                             },
                                           ),
                                           border: OutlineInputBorder(
-                                            borderRadius: BorderRadius.circular(
-                                              10,
-                                            ),
+                                            borderRadius: BorderRadius.circular(10),
                                           ),
                                         ),
                                         obscureText:
-                                            signupController
-                                                .obscureConfirmPassword
-                                                .value,
+                                            signupController.obscureConfirmPassword.value,
                                         validator:
-                                            (value) =>
-                                                AppValidator.validateEmptyText(
-                                                  'confirmPassword',
-                                                  value,
-                                                ),
+                                            (value) => AppValidator.validateEmptyText(
+                                              'confirmPassword',
+                                              value,
+                                            ),
                                       ),
                                     ),
                                   ),
 
-                                  // Sign Up Button
+                                  //-- Sign Up Button
                                   CustomButton(
                                     onTap: () {
                                       signupController.signUp();
                                     },
-                                    margin: EdgeInsets.only(
-                                      top: context.screenHeight * 0.03,
-                                    ),
+                                    margin: EdgeInsets.only(top: context.screenHeight * 0.03),
                                     text: AppStrings.signupText,
                                     loginTextStyle: GoogleFonts.poppins(
                                       color: Colors.white,
@@ -286,7 +234,7 @@ class _SignupPageState extends State<SignupPage>
                                     ),
                                   ),
 
-                                  // Already have account button
+                                  //--Already have account button
                                   AlreadyHaveAccountButton(
                                     onPressed: () {
                                       Get.offAll(() => LoginPage());

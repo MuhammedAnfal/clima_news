@@ -14,6 +14,7 @@ class AppStrings {
   static const String todayText = "Today";
   static const String profileText = "Profile";
   static const String newsText = "News";
+  static const String searchResultText = "Search Results";
   static const String seeAllText = "See All";
   static const String weatherText = "Weather";
   static const String loginText = "Login";
@@ -29,8 +30,7 @@ class AppStrings {
       '"No more guessing - just hyper-accurate forecasts"';
   static const String onBoardingSubTitle3 =
       'News + weather, together. Stay informed, anytime.';
-  static const String yourAccuntCreatedTitle =
-      "Your Account Successfully Created";
+  static const String yourAccuntCreatedTitle = "Your Account Successfully Created";
   static const String yourAccuntCreatedTitleSubTitle =
       "Welcome To Clima News: Your Account is Created, Stay informed, anytime...";
 }

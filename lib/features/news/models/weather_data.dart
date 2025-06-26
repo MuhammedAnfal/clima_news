@@ -1,6 +1,5 @@
 import 'package:clima_news/features/news/models/current_weather_data.dart';
 import 'package:clima_news/features/news/models/hourly_weather_data.dart';
-import 'package:clima_news/features/news/models/search_weather_model.dart';
 
 class WeatherData {
   final CurrentWeatherData? current;

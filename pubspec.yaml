@@ -57,6 +57,7 @@ dependencies:
   lottie: ^3.1.3
   connectivity_plus: ^4.0.1
   shimmer: ^3.0.0
+  flutter_launcher_icons: ^0.14.4
 
   #-- http
   http: ^1.4.0
@@ -94,6 +95,7 @@ flutter:
     - assets/profile/
     - assets/weather/
     - assets/news/
+    - assets/
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

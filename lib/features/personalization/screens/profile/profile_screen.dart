@@ -1,4 +1,3 @@
-import 'package:clima_news/features/authentication/controller/signup/signup_controller.dart';
 import 'package:clima_news/features/personalization/controllers/user_controller.dart';
 import 'package:clima_news/features/utils/constants/app_colors.dart';
 import 'package:clima_news/features/utils/constants/image_constants.dart';

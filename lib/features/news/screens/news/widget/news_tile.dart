@@ -50,7 +50,7 @@ class NewsTile extends StatelessWidget {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(25),
                     child:
-                        (imageUrl == '' || imageUrl == null)
+                        (imageUrl == '')
                             ? Image.asset(AppImages.defaultnewsImage)
                             : Image.network(imageUrl, fit: BoxFit.cover),
                   ),

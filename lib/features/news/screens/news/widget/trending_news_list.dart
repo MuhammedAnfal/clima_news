@@ -5,7 +5,6 @@ import 'package:clima_news/features/news/screens/news/widget/trending_card.dart'
 import 'package:clima_news/features/utils/extension/size_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class TrendingNewsList extends StatelessWidget {
   final List<NewsModel> trendingNewsList;

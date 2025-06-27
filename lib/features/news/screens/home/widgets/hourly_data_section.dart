@@ -9,7 +9,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 
 class HourlyDataSection extends StatelessWidget {
-  HourlyDataSection({super.key, required this.hourlyWeatherData});
+  const HourlyDataSection({super.key, required this.hourlyWeatherData});
   final HourlyWeatherData hourlyWeatherData;
 
   @override

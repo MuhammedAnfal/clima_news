@@ -6,7 +6,6 @@ import 'package:clima_news/features/news/screens/news/widget/news_list_widget.da
 import 'package:clima_news/features/news/screens/news/widget/search_result_widget.dart';
 import 'package:clima_news/features/news/screens/news/widget/trending_news_list.dart';
 import 'package:clima_news/features/utils/constants/app_colors.dart';
-import 'package:clima_news/features/utils/constants/string_constants.dart';
 import 'package:clima_news/features/utils/extension/size_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

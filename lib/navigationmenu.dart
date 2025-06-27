@@ -1,11 +1,9 @@
-import 'package:clima_news/common/widgets/shimmer/news_shimmer.dart';
 import 'package:clima_news/features/news/screens/home/weather_screen.dart';
 import 'package:clima_news/features/news/screens/news/news_screen.dart';
 import 'package:clima_news/features/personalization/screens/profile/profile_screen.dart';
 import 'package:clima_news/features/utils/constants/app_colors.dart';
 import 'package:clima_news/features/utils/constants/string_constants.dart';
 import 'package:clima_news/features/utils/extension/size_extension.dart';
-import 'package:clima_news/features/utils/helper/helper_funtion.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
@@ -65,11 +63,11 @@ class CustomNavigationBar extends StatelessWidget {
   final List<NavBarItemData> items;
 
   const CustomNavigationBar({
-    Key? key,
+    super.key,
     required this.selectedIndex,
     required this.onItemSelected,
     required this.items,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -116,12 +114,11 @@ class _NavBarItem extends StatelessWidget {
   final VoidCallback onTap;
 
   const _NavBarItem({
-    Key? key,
     required this.icon,
     required this.label,
     required this.isSelected,
     required this.onTap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

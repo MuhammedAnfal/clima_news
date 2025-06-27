@@ -1,9 +1,5 @@
-import 'package:clima_news/data/repositories/authentication/authenticaion_repository.dart';
 import 'package:clima_news/data/repositories/user/user_repository.dart';
 import 'package:clima_news/features/authentication/models/user_model.dart';
-import 'package:clima_news/features/utils/constants/image_constants.dart';
-import 'package:clima_news/features/utils/constants/sizes.dart';
-import 'package:clima_news/features/utils/popups/full_screen_loader.dart';
 import 'package:clima_news/features/utils/popups/loaders.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';

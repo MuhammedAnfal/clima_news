@@ -1,7 +1,6 @@
 import 'package:clima_news/features/news/models/weather_data.dart';
 import 'package:clima_news/features/news/screens/home/widgets/fetch_weather_api.dart';
 import 'package:clima_news/features/utils/popups/loaders.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';

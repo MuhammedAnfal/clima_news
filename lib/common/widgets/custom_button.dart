@@ -20,8 +20,7 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final loginController = Get.put(LoginController());
-    print(loginController.isLoading.value);
-    print('1');
+    
     return Padding(
       padding: margin ?? EdgeInsets.zero,
       child: Material(

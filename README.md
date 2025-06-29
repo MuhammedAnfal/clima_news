@@ -19,7 +19,7 @@ Current weather display with temperature and conditions
 
 Paginated Hourly Forecast:
 
-4-hour increments displayed per page
+1-hour of four item displayed per page
 
 Horizontal swipe navigation
 

@@ -1,5 +1,6 @@
 import 'package:clima_news/common/widgets/shimmer/weather_shimmer.dart';
 import 'package:clima_news/features/news/controller/home/home_controller.dart';
+import 'package:clima_news/features/news/screens/home/widgets/daily_weather_data.dart';
 import 'package:clima_news/features/news/screens/home/widgets/home_weather_details.dart';
 import 'package:clima_news/features/news/screens/home/widgets/hourly_data_section.dart';
 import 'package:clima_news/features/news/screens/home/widgets/weather_degree_detail.dart';
@@ -59,7 +60,7 @@ class _WeatherScreenState extends State<WeatherScreen> with SingleTickerProvider
       return Scaffold(
         body: SafeArea(
           child: SingleChildScrollView(
-            padding: EdgeInsets.all(context.screenWidth * 0.03),
+            padding: EdgeInsets.all(context.screenWidth * 0.06),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -106,6 +107,8 @@ class _WeatherScreenState extends State<WeatherScreen> with SingleTickerProvider
                 HourlyDataSection(
                   hourlyWeatherData: homeController.getData().getHourlytWeather(),
                 ),
+
+                ForecastTile(dailyWeatherData: homeController.getData().getDailyWeather()),
               ],
             ),
           ),

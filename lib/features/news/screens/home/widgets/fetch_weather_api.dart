@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:clima_news/features/news/models/current_weather_data.dart';
+import 'package:clima_news/features/news/models/daily_weather_data.dart';
 import 'package:clima_news/features/news/models/hourly_weather_data.dart';
 import 'package:clima_news/features/news/models/weather_data.dart';
 import 'package:clima_news/features/utils/constants/api_constants.dart';
@@ -26,12 +27,11 @@ class FetchWeatherApi {
       // Create CurrentWeatherData from the JSON
       var currentWeatherData = CurrentWeatherData.fromJson(jsonString);
       var hourlyWeatherData = HourlyWeatherData.fromJson(jsonString);
-      print(hourlyWeatherData.hourly.first.temp);
-      print(hourlyWeatherData.hourly.first.dt);
-      print('4');
+      var dailyWeatherData = DailyWeatherData.fromJson(jsonString);
+      for (var a in dailyWeatherData.daily) {}
 
       // Return WeatherData containing the CurrentWeatherData
-      return WeatherData(currentWeatherData, hourlyWeatherData);
+      return WeatherData(currentWeatherData, hourlyWeatherData, dailyWeatherData);
     } catch (e) {
       Loaders.errorSnackBar(title: e.toString());
       rethrow; // Re-throw the exception so the caller can handle it

@@ -36,7 +36,6 @@ class ForecastDetailsTile extends StatelessWidget {
                 color: AppColors.lightBackground,
               ),
               margin: EdgeInsets.only(bottom: context.screenWidth * 0.02),
-
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [

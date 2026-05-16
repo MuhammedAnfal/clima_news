@@ -39,6 +39,7 @@ class NewsDetailsScreen extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               children: [
+
                 //-- showing news image
                 Container(
                   decoration: BoxDecoration(borderRadius: BorderRadius.circular(30)),

@@ -18,6 +18,7 @@ class LoginController extends GetxController {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   final RxBool isLoading = false.obs;
+  
 
   @override
   void dispose() {
